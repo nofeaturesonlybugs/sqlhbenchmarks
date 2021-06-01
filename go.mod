@@ -1,5 +1,9 @@
 module github.com/nofeaturesonlybugs/sqlhbenchmarks
 
+replace github.com/nofeaturesonlybugs/sqlh => ../sqlh
+
+go 1.14
+
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/Masterminds/squirrel v1.5.0
@@ -13,7 +17,3 @@ require (
 	gorm.io/gorm v1.21.10
 	modernc.org/sqlite v1.10.8
 )
-
-replace github.com/nofeaturesonlybugs/sqlh => ../sqlh
-
-go 1.14
