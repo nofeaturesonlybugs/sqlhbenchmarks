@@ -1,7 +1,5 @@
 module github.com/nofeaturesonlybugs/sqlhbenchmarks
 
-replace github.com/nofeaturesonlybugs/sqlh => ../sqlh
-
 go 1.14
 
 require (
@@ -12,7 +10,7 @@ require (
 	github.com/lib/pq v1.10.2
 	github.com/nofeaturesonlybugs/errors v1.0.1
 	github.com/nofeaturesonlybugs/set v0.3.0
-	github.com/nofeaturesonlybugs/sqlh v0.0.0-00010101000000-000000000000
+	github.com/nofeaturesonlybugs/sqlh v0.1.0
 	gorm.io/driver/postgres v1.1.0
 	gorm.io/gorm v1.21.10
 	modernc.org/sqlite v1.10.8

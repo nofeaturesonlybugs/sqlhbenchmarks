@@ -289,6 +289,8 @@ github.com/nofeaturesonlybugs/errors v1.0.1 h1:1V31ZMG4v/O1ITqebbA6EVGbflU7CQTxL
 github.com/nofeaturesonlybugs/errors v1.0.1/go.mod h1:ijb9eAT2bkxkRaLR2LdMN1m7yexrxUBHM00L8JcT03A=
 github.com/nofeaturesonlybugs/set v0.3.0 h1:qwlz+ehlovgyFuOYPCzrkIc22VgVY/pgawu0PvL2LkU=
 github.com/nofeaturesonlybugs/set v0.3.0/go.mod h1:7mAYEi6K99BjJm4ieiWNJs43iJ7sXba0KB9POM/x5bY=
+github.com/nofeaturesonlybugs/sqlh v0.1.0 h1:W7c4T1MHnB7ttYvRIN7Kd+MaFZQhhCs6ZAD/uS0RQ4c=
+github.com/nofeaturesonlybugs/sqlh v0.1.0/go.mod h1:wlcSBMeWGDaDGTqedBmbilf6dWkvBbdAAOVVSi0a/pc=
 github.com/oklog/oklog v0.3.2/go.mod h1:FCV+B7mhrz4o+ueLpx+KqkyXRGMWOYEvfiXtdGtbWGs=
 github.com/oklog/run v1.0.0/go.mod h1:dlhp/R75TPv97u0XWUtDeV/lRKWPKSdTuV0TZvrmrQA=
 github.com/olekukonko/tablewriter v0.0.0-20170122224234-a0225b3f23b5/go.mod h1:vsDQFd/mU46D+Z4whnwzcISnGGzXWMclvtLoiIKAKIo=
