@@ -32,6 +32,8 @@ Since `gorm` was relatively easy to point at Postgres I included it in the `lib/
 ## Notes on `squirrel`  
 `squirrel` was an interesting experience.  I'd had no experience with the package prior to including it in my benchmarks.  I do find it to be an improvement in placing query arguments next to where they're used in the query, especially when creating `UPDATE` statements.  I'm not overly fond of the introduction of new types to handle things like prepared statements although I understand the reasoning.  `squirrel` is generally more memory hungry than other packages.
 
+Further - since this is my first time using `squirrel` - it's possible I may have made mistakes in setting it up for prepared statements in the relevant benchmarks.  If anyone happens to check my work and finds errors please let me know and I will update the benchmarks.
+
 ## Hardware
 ```
 goos: windows
