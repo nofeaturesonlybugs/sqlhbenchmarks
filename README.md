@@ -162,10 +162,10 @@ This benchmark was performed with the same `SELECT` and scan destination as the 
 
 ```bash
 # 5 records
-database/sql_5_rows-8      	   12458	     96676 ns/op	    7320 B/op	     250 allocs/op
-sqlx_5_rows-8              	   10000	    101621 ns/op	    8038 B/op	     258 allocs/op
-scany_5_rows-8             	   10000	    112007 ns/op	    9834 B/op	     354 allocs/op
-sqlh_5_rows-8                  10000	    103653 ns/op	    8990 B/op	     270 allocs/op
+database/sql_5_rows-8		    12458	     96676 ns/op	    7320 B/op	     250 allocs/op
+sqlx_5_rows-8				    10000	    101621 ns/op	    8038 B/op	     258 allocs/op
+scany_5_rows-8				    10000	    112007 ns/op	    9834 B/op	     354 allocs/op
+sqlh_5_rows-8				    10000	    103653 ns/op	    8990 B/op	     270 allocs/op
 # 50 records
 database/sql_50_rows-8          3724	    305367 ns/op	   67448 B/op	    2275 allocs/op
 sqlx_50_rows-8                  3951	    326165 ns/op	   71224 B/op	    2328 allocs/op
