@@ -162,10 +162,10 @@ This benchmark was performed with the same `SELECT` and scan destination as the 
 
 ```bash
 # 5 records
-database/sql_5_rows-8		    12458	     96676 ns/op	    7320 B/op	     250 allocs/op
-sqlx_5_rows-8				    10000	    101621 ns/op	    8038 B/op	     258 allocs/op
-scany_5_rows-8				    10000	    112007 ns/op	    9834 B/op	     354 allocs/op
-sqlh_5_rows-8				    10000	    103653 ns/op	    8990 B/op	     270 allocs/op
+database/sql_5_rows-8          12458	     96676 ns/op	    7320 B/op	     250 allocs/op
+sqlx_5_rows-8                  10000	    101621 ns/op	    8038 B/op	     258 allocs/op
+scany_5_rows-8                 10000	    112007 ns/op	    9834 B/op	     354 allocs/op
+sqlh_5_rows-8                  10000	    103653 ns/op	    8990 B/op	     270 allocs/op
 # 50 records
 database/sql_50_rows-8          3724	    305367 ns/op	   67448 B/op	    2275 allocs/op
 sqlx_50_rows-8                  3951	    326165 ns/op	   71224 B/op	    2328 allocs/op
@@ -227,27 +227,27 @@ The following benchmarks show `Begin() -> Prepare() -> Exec()` to insert a slice
 database/sql_begin+prepare+insert_5_row(s)-8            1490	    736679 ns/op	    6604 B/op	     165 allocs/op
 GORM_slice+insert_5_row(s)-8                             950	   1067537 ns/op	    9815 B/op	     143 allocs/op
 squirrel_begin+prepare+insert_5_row(s)-8                1084	   1092230 ns/op	   28024 B/op	     645 allocs/op
-sqlh/model_begin+prepare+insert_5_row(s)-8         	     568	   2596587 ns/op	    8082 B/op	     196 allocs/op
+sqlh/model_begin+prepare+insert_5_row(s)-8               568	   2596587 ns/op	    8082 B/op	     196 allocs/op
 # 50 records
 database/sql_begin+prepare+insert_50_row(s)-8            138	   8354679 ns/op	   66298 B/op	    1652 allocs/op
 GORM_slice+insert_50_row(s)-8                            501	   2473041 ns/op	   57312 B/op	     793 allocs/op
 squirrel_begin+prepare+insert_50_row(s)-8                127	  11681451 ns/op	  280444 B/op	    6456 allocs/op
-sqlh/model_begin+prepare+insert_50_row(s)-8        	     122	  12672856 ns/op	   67769 B/op	    1683 allocs/op
+sqlh/model_begin+prepare+insert_50_row(s)-8              122	  12672856 ns/op	   67769 B/op	    1683 allocs/op
 # 100 records
 database/sql_begin+prepare+insert_100_row(s)-8            70	  24493961 ns/op	  132531 B/op	    3304 allocs/op
 GORM_slice+insert_100_row(s)-8                           396	   2777564 ns/op	  107026 B/op	    1597 allocs/op
 squirrel_begin+prepare+insert_100_row(s)-8                45	  26156067 ns/op	  560691 B/op	   12910 allocs/op
-sqlh/model_begin+prepare+insert_100_row(s)-8       	      67	  23372439 ns/op	  134008 B/op	    3335 allocs/op
+sqlh/model_begin+prepare+insert_100_row(s)-8              67	  23372439 ns/op	  134008 B/op	    3335 allocs/op
 # 500 records
 database/sql_begin+prepare+insert_500_row(s)-8             9	 111672778 ns/op	  664056 B/op	   16536 allocs/op
 GORM_slice+insert_500_row(s)-8                           139	   8918647 ns/op	  583896 B/op	    8009 allocs/op
 squirrel_begin+prepare+insert_500_row(s)-8                13	 113849262 ns/op	 2802340 B/op	   64551 allocs/op
-sqlh/model_begin+prepare+insert_500_row(s)-8       	      14	  89883943 ns/op	  663012 B/op	   16543 allocs/op
+sqlh/model_begin+prepare+insert_500_row(s)-8              14	  89883943 ns/op	  663012 B/op	   16543 allocs/op
 # 1,000 records
 database/sql_begin+prepare+insert_1000_row(s)-8            6	 176948517 ns/op	 1324336 B/op	   33033 allocs/op
 GORM_slice+insert_1000_row(s)-8                           74	  16430857 ns/op	 1176609 B/op	   16018 allocs/op
 squirrel_begin+prepare+insert_1000_row(s)-8                5	 227757900 ns/op	 5601816 B/op	  129079 allocs/op
-sqlh/model_begin+prepare+insert_1000_row(s)-8      	       6	 195512150 ns/op	 1326716 B/op	   33074 allocs/op
+sqlh/model_begin+prepare+insert_1000_row(s)-8              6	 195512150 ns/op	 1326716 B/op	   33074 allocs/op
 ```
 
 ## Postgres - Dumb Update  
@@ -289,27 +289,27 @@ The following benchmarks show `Begin() -> Prepare() -> Exec()` to insert a slice
 database/sql_begin+prepare+update_5_row(s)-8         	    1110	   1336426 ns/op	    6895 B/op	     150 allocs/op
 GORM_update_5_row(s)-8                               	    3848	    520668 ns/op	   14241 B/op	     162 allocs/op
 squirrel_begin+prepare+update_5_row(s)-8             	     841	   1529204 ns/op	   38957 B/op	     855 allocs/op
-sqlh/model_begin+prepare+update_5_row(s)-8         	         649	   2008840 ns/op	    7885 B/op	     173 allocs/op
+sqlh/model_begin+prepare+update_5_row(s)-8                   649	   2008840 ns/op	    7885 B/op	     173 allocs/op
 # 50 records
 database/sql_begin+prepare+update_50_row(s)-8        	     100	  10373155 ns/op	   69153 B/op	    1501 allocs/op
 GORM_update_50_row(s)-8                              	     535	   7558777 ns/op	  110557 B/op	     820 allocs/op
 squirrel_begin+prepare+update_50_row(s)-8            	      81	  17105143 ns/op	  389943 B/op	    8553 allocs/op
-sqlh/model_begin+prepare+update_50_row(s)-8        	          97	  17899106 ns/op	   70424 B/op	    1568 allocs/op
+sqlh/model_begin+prepare+update_50_row(s)-8                   97	  17899106 ns/op	   70424 B/op	    1568 allocs/op
 # 100 records
 database/sql_begin+prepare+update_100_row(s)-8       	      63	  19669398 ns/op	  138172 B/op	    3001 allocs/op
 GORM_update_100_row(s)-8                             	     280	  10390849 ns/op	  205307 B/op	    1625 allocs/op
 squirrel_begin+prepare+update_100_row(s)-8           	      36	  28659156 ns/op	  779430 B/op	   17104 allocs/op
-sqlh/model_begin+prepare+update_100_row(s)-8       	          64	  21718161 ns/op	  139811 B/op	    3119 allocs/op
+sqlh/model_begin+prepare+update_100_row(s)-8                  64	  21718161 ns/op	  139811 B/op	    3119 allocs/op
 # 500 records
 database/sql_begin+prepare+update_500_row(s)-8       	      12	  97196517 ns/op	  695215 B/op	   15498 allocs/op
 GORM_update_500_row(s)-8                             	      74	  21223735 ns/op	 1006385 B/op	    8681 allocs/op
 squirrel_begin+prepare+update_500_row(s)-8           	      10	 123098130 ns/op	 3903352 B/op	   86021 allocs/op
-sqlh/model_begin+prepare+update_500_row(s)-8       	          10	 135324480 ns/op	  697669 B/op	   15767 allocs/op
+sqlh/model_begin+prepare+update_500_row(s)-8                  10	 135324480 ns/op	  697669 B/op	   15767 allocs/op
 # 1,000 records
 database/sql_begin+prepare+update_1000_row(s)-8      	       7	 206369114 ns/op	 1396044 B/op	   31509 allocs/op
 GORM_update_1000_row(s)-8                            	      39	  38828905 ns/op	 2207693 B/op	   17690 allocs/op
 squirrel_begin+prepare+update_1000_row(s)-8          	       6	 269227417 ns/op	 7809578 B/op	  172543 allocs/op
-sqlh/model_begin+prepare+update_1000_row(s)-8      	           6	 229407333 ns/op	 1397428 B/op	   31773 allocs/op
+sqlh/model_begin+prepare+update_1000_row(s)-8                  6	 229407333 ns/op	 1397428 B/op	   31773 allocs/op
 ```
 
 The previous Postgres tests are now repeated with Sqlite sans `gorm`.
@@ -343,23 +343,23 @@ sqlh/model_insert_1000_row(s)-8             1	5444616300 ns/op	53682080 B/op	 13
 # 5 records
 database/sql_begin+prepare+insert_5_row(s)-8        	1992	    595825 ns/op	  269003 B/op	    6975 allocs/op
 squirrel_begin+prepare+insert_5_row(s)-8            	1833	    623820 ns/op	  290786 B/op	    7495 allocs/op
-sqlh/model_begin+prepare+insert_5_row(s)-8        	     208	   5671543 ns/op	  269702 B/op	    6987 allocs/op
+sqlh/model_begin+prepare+insert_5_row(s)-8               208	   5671543 ns/op	  269702 B/op	    6987 allocs/op
 # 50 records
 database/sql_begin+prepare+insert_50_row(s)-8       	 214	   6060468 ns/op	 2690042 B/op	   69754 allocs/op
 squirrel_begin+prepare+insert_50_row(s)-8           	 192	   6271936 ns/op	 2907824 B/op	   74958 allocs/op
-sqlh/model_begin+prepare+insert_50_row(s)-8       	     100	  10821204 ns/op	 2690489 B/op	   69763 allocs/op
+sqlh/model_begin+prepare+insert_50_row(s)-8              100	  10821204 ns/op	 2690489 B/op	   69763 allocs/op
 # 100 records
 database/sql_begin+prepare+insert_100_row(s)-8      	 106	  11184752 ns/op	 5379689 B/op	  139505 allocs/op
 squirrel_begin+prepare+insert_100_row(s)-8          	  96	  12460612 ns/op	 5815093 B/op	  149910 allocs/op
-sqlh/model_begin+prepare+insert_100_row(s)-8      	      76	  16489736 ns/op	 5380870 B/op	  139521 allocs/op
+sqlh/model_begin+prepare+insert_100_row(s)-8              76	  16489736 ns/op	 5380870 B/op	  139521 allocs/op
 # 500 records
 database/sql_begin+prepare+insert_500_row(s)-8      	  19	  57751174 ns/op	26901126 B/op	  697553 allocs/op
 squirrel_begin+prepare+insert_500_row(s)-8          	  18	  62421122 ns/op	29076555 B/op	  749562 allocs/op
-sqlh/model_begin+prepare+insert_500_row(s)-8      	      18	  61375433 ns/op	26900149 B/op	  697547 allocs/op
+sqlh/model_begin+prepare+insert_500_row(s)-8              18	  61375433 ns/op	26900149 B/op	  697547 allocs/op
 # 1,000 records
 database/sql_begin+prepare+insert_1000_row(s)-8     	   9	 111906267 ns/op	53799579 B/op	 1395079 allocs/op
 squirrel_begin+prepare+insert_1000_row(s)-8         	   8	 125255625 ns/op	58156813 B/op	 1499166 allocs/op
-sqlh/model_begin+prepare+insert_1000_row(s)-8     	       9	 120388589 ns/op	53796854 B/op	 1395054 allocs/op
+sqlh/model_begin+prepare+insert_1000_row(s)-8              9	 120388589 ns/op	53796854 B/op	 1395054 allocs/op
 ```
 
 ## Sqlite - Dumb Update  
@@ -391,21 +391,21 @@ sqlh/model_update_1000_row(s)-8                 44	  26776673 ns/op	 1312121 B/o
 # 5 records
 database/sql_begin+prepare+update_5_row(s)-8            9703	    130129 ns/op	    5847 B/op	     190 allocs/op
 squirrel_begin+prepare+update_5_row(s)-8                5458	    218285 ns/op	   38304 B/op	     945 allocs/op
-sqlh/model_begin+prepare+update_5_row(s)-8        	    8781	    136517 ns/op	    6591 B/op	     205 allocs/op
+sqlh/model_begin+prepare+update_5_row(s)-8              8781	    136517 ns/op	    6591 B/op	     205 allocs/op
 # 50 records
 database/sql_begin+prepare+update_50_row(s)-8            916	   1297656 ns/op	   58457 B/op	    1900 allocs/op
 squirrel_begin+prepare+update_50_row(s)-8                550	   2339813 ns/op	  383147 B/op	    9453 allocs/op
-sqlh/model_begin+prepare+update_50_row(s)-8       	     859	   1350686 ns/op	   59912 B/op	    1960 allocs/op
+sqlh/model_begin+prepare+update_50_row(s)-8              859	   1350686 ns/op	   59912 B/op	    1960 allocs/op
 # 100 records
 database/sql_begin+prepare+update_100_row(s)-8           462	   2594040 ns/op	  116932 B/op	    3801 allocs/op
 squirrel_begin+prepare+update_100_row(s)-8               277	   4367517 ns/op	  766107 B/op	   18904 allocs/op
-sqlh/model_begin+prepare+update_100_row(s)-8      	     440	   2738170 ns/op	  119264 B/op	    3912 allocs/op
+sqlh/model_begin+prepare+update_100_row(s)-8             440	   2738170 ns/op	  119264 B/op	    3912 allocs/op
 # 500 records
 database/sql_begin+prepare+update_500_row(s)-8            91	  12915989 ns/op	  590369 B/op	   19494 allocs/op
 squirrel_begin+prepare+update_500_row(s)-8                55	  21805969 ns/op	 3837766 B/op	   95006 allocs/op
-sqlh/model_begin+prepare+update_500_row(s)-8      	      87	  13552601 ns/op	  595252 B/op	   19761 allocs/op
+sqlh/model_begin+prepare+update_500_row(s)-8              87	  13552601 ns/op	  595252 B/op	   19761 allocs/op
 # 1,000 records
 database/sql_begin+prepare+update_1000_row(s)-8           45	  25837742 ns/op	 1186918 B/op	   39500 allocs/op
 squirrel_begin+prepare+update_1000_row(s)-8               26	  43744408 ns/op	 7684063 B/op	  190526 allocs/op
-sqlh/model_begin+prepare+update_1000_row(s)-8     	      43	  27197272 ns/op	 1192095 B/op	   39770 allocs/op
+sqlh/model_begin+prepare+update_1000_row(s)-8             43	  27197272 ns/op	 1192095 B/op	   39770 allocs/op
 ```
