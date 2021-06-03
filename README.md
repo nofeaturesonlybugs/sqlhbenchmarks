@@ -15,6 +15,12 @@ I'll summarize my results with the following:
 2. `model.Models` is probably sufficient for small to medium applications but is lacking in a few benchmarks (not to mention the somewhat limited current feature set).  I plan to use it in my small to medium sized applications if that's worth anything to you.
 3. Once you factor in a real database the cost of `reflect` starts to dwindle.
 
+## Repeating These Tests  
+If you have any desire to repeat these benchmarks for your environment or as part of evaluating which SQL package to use in Go:  
+
+* Create a `TEST_POSTGRES` environment variable with a correct DSN for `lib/pq` to run the Postgres tests.  The user in the DSN will need to be able to perform some `ALTER TABLE` statements; see `schema.go` for the exact statements.
+* Create a `TEST_SQLITE` environment variable with a correct DSN for Sqlite.  Out of the box this package uses `modernc.org/sqlite`; you can make slight alterations to `functions_sqlite.go` to point it at `mattn` instead.
+
 ## Notes on Sqlite  
 My `model.Models` type only supports grammars with a `RETURNING` clause; therefore to benchmark Sqlite I needed to use version 3.35.  Originally I was using the `github.com/mattn` package (and a specific commit for Sqlite 3.35) but was having trouble when switching back and forth between Windows and Debian for benchmarks.  Eventually I substituted `github.com/mattn`'s Sqlite for `modernc.org/sqlite`.  This satisfied my desire of having something other than Postgres to benchmark against however I do not use Sqlite professionally; I don't know if the `modernc` version of Sqlite is production ready (seems to be experimental).  Even though I do not present them here I will say the `mattn` Sqlite benchmarks were more performant when I did have it working.
 

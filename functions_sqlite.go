@@ -9,7 +9,7 @@ import (
 	"github.com/nofeaturesonlybugs/sqlh/model"
 	"github.com/nofeaturesonlybugs/sqlhbenchmarks/types"
 
-	// Uses mattn library -- don't feel like dealing with cgo.
+	// Uses modernc library -- don't feel like dealing with cgo.
 	// "gorm.io/driver/sqlite"
 	// "gorm.io/gorm"
 	// "gorm.io/gorm/logger"
