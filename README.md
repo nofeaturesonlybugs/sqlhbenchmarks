@@ -165,7 +165,7 @@ scany_1000_rows-8             	     187	   5714156 ns/op	  534367 B/op	   17776 
 sqlh_1000_rows-8              	     222	   5068332 ns/op	  578752 B/op	   18684 allocs/op
 ```
 
-## Scanning Postgres using `modernc.org/sqlite` (Sqlite 3.35) driver:  
+## Scanning Sqlite using `modernc.org/sqlite` (Sqlite 3.35) driver:  
 This benchmark was performed with the same `SELECT` and scan destination as the Postgres `SELECT` benchmark.
 
 ```bash
