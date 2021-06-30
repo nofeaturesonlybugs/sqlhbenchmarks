@@ -15,3 +15,5 @@ require (
 	gorm.io/gorm v1.21.10
 	modernc.org/sqlite v1.10.8
 )
+
+replace github.com/nofeaturesonlybugs/sqlh v0.1.0 => ../sqlh
