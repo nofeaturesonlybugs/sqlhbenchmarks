@@ -64,7 +64,7 @@ func BenchmarkSqliteInsert(b *testing.B) {
 	//
 	b.ResetTimer()
 	for _, lim := range limits {
-		b.Run(fmt.Sprintf("database/sql insert %v row(s)", lim), sqlhbenchmarks.StandardInsert(addresses[0:lim], grammar.Default, db))
+		b.Run(fmt.Sprintf("database/sql insert %v row(s)", lim), sqlhbenchmarks.StandardInsert(addresses[0:lim], grammar.Sqlite, db))
 		// b.Run(fmt.Sprintf("GORM insert %v row(s)", lim), sqlhbenchmarks.GORMInsert(addresses[0:lim], gb))
 		b.Run(fmt.Sprintf("squirrel insert %v row(s)", lim), sqlhbenchmarks.SquirrelInsert(addresses[0:lim], db))
 		b.Run(fmt.Sprintf("sqlh/model insert %v row(s)", lim), sqlhbenchmarks.ModelInsert(mdb, addresses[0:lim], db))
@@ -94,7 +94,7 @@ func BenchmarkSqlitePreparedInsert(b *testing.B) {
 	//
 	b.ResetTimer()
 	for _, lim := range limits {
-		b.Run(fmt.Sprintf("database/sql begin+prepare+insert %v row(s)", lim), sqlhbenchmarks.StandardPreparedInsert(addresses[0:lim], grammar.Default, db))
+		b.Run(fmt.Sprintf("database/sql begin+prepare+insert %v row(s)", lim), sqlhbenchmarks.StandardPreparedInsert(addresses[0:lim], grammar.Sqlite, db))
 		// b.Run(fmt.Sprintf("GORM slice+insert %v row(s)", lim), sqlhbenchmarks.GORMPreparedInsert(addresses[0:lim], gb))
 		b.Run(fmt.Sprintf("squirrel begin+prepare+insert %v row(s)", lim), sqlhbenchmarks.SquirrelPreparedInsert(addresses[0:lim], db))
 		b.Run(fmt.Sprintf("sqlh/model begin+prepare+insert %v row(s)", lim), sqlhbenchmarks.ModelPreparedInsert(mdb, addresses[0:lim], db))
@@ -139,7 +139,7 @@ func BenchmarkSqliteUpdate(b *testing.B) {
 		if tx, err = db.Begin(); err != nil {
 			b.Fatalf("sqlite failed with begin %v", err.Error())
 		}
-		b.Run(fmt.Sprintf("database/sql update %v row(s)", lim), sqlhbenchmarks.StandardUpdate(addresses[0:lim], grammar.Default, tx))
+		b.Run(fmt.Sprintf("database/sql update %v row(s)", lim), sqlhbenchmarks.StandardUpdate(addresses[0:lim], grammar.Sqlite, tx))
 		if err = tx.Rollback(); err != nil {
 			b.Fatalf("sqlite failed with rollback %v", err.Error())
 		}
@@ -206,7 +206,7 @@ func BenchmarkSqlitePreparedUpdate(b *testing.B) {
 		if tx, err = db.Begin(); err != nil {
 			b.Fatalf("sqlite failed with begin %v", err.Error())
 		}
-		b.Run(fmt.Sprintf("database/sql begin+prepare+update %v row(s)", lim), sqlhbenchmarks.StandardPreparedUpdate(addresses[0:lim], grammar.Default, tx))
+		b.Run(fmt.Sprintf("database/sql begin+prepare+update %v row(s)", lim), sqlhbenchmarks.StandardPreparedUpdate(addresses[0:lim], grammar.Sqlite, tx))
 		if err = tx.Rollback(); err != nil {
 			b.Fatalf("sqlite failed with rollback %v", err.Error())
 		}

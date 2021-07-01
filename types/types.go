@@ -37,7 +37,7 @@ func NewMapper() *set.Mapper {
 }
 
 // NewModels returns a model.Models for the types in this package.
-func NewModels(grammar *grammar.Grammar) *model.Models {
+func NewModels(grammar grammar.Grammar) *model.Models {
 	rv := &model.Models{
 		Mapper:  NewMapper(),
 		Grammar: grammar,

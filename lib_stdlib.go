@@ -93,11 +93,11 @@ func StandardSelect(limit int, db *sql.DB) func(*testing.B) {
 
 // StandardInsert performs INSERTs using QueryRow() -> row.Scan() over the range of models using
 // standard database/sql package.
-func StandardInsert(addresses []*types.Address, g *grammar.Grammar, db *sql.DB) func(b *testing.B) {
+func StandardInsert(addresses []*types.Address, g grammar.Grammar, db *sql.DB) func(b *testing.B) {
 	fn := func(b *testing.B) {
 		var query string
 		switch g {
-		case grammar.Default:
+		case grammar.Sqlite:
 			query = `
 				insert into %v ( street, city, state, zip )
 				values ( ?, ?, ?, ? )
@@ -133,11 +133,11 @@ func StandardInsert(addresses []*types.Address, g *grammar.Grammar, db *sql.DB) 
 
 // StandardPreparedInsert performs INSERTs using Prepare() -> QueryRow() -> row.Scan() over the
 // range of models using standard database/sql package.
-func StandardPreparedInsert(addresses []*types.Address, g *grammar.Grammar, db *sql.DB) func(b *testing.B) {
+func StandardPreparedInsert(addresses []*types.Address, g grammar.Grammar, db *sql.DB) func(b *testing.B) {
 	fn := func(b *testing.B) {
 		var query string
 		switch g {
-		case grammar.Default:
+		case grammar.Sqlite:
 			query = `
 				insert into %v ( street, city, state, zip )
 				values ( ?, ?, ?, ? )
@@ -186,11 +186,11 @@ func StandardPreparedInsert(addresses []*types.Address, g *grammar.Grammar, db *
 
 // StandardUpdate performs UPDATEs using QueryRow() -> row.Scan() over the range of models using
 // standard database/sql package.
-func StandardUpdate(addresses []*types.Address, g *grammar.Grammar, tx *sql.Tx) func(b *testing.B) {
+func StandardUpdate(addresses []*types.Address, g grammar.Grammar, tx *sql.Tx) func(b *testing.B) {
 	fn := func(b *testing.B) {
 		var query string
 		switch g {
-		case grammar.Default:
+		case grammar.Sqlite:
 			query = `
 				update %v set
 					street = ?, city = ?, state = ?, zip = ?
@@ -228,11 +228,11 @@ func StandardUpdate(addresses []*types.Address, g *grammar.Grammar, tx *sql.Tx) 
 
 // StandardPreparedUpdate performs UPDATEs using QueryRow() -> row.Scan() over the range of models using
 // standard database/sql package.
-func StandardPreparedUpdate(addresses []*types.Address, g *grammar.Grammar, tx *sql.Tx) func(b *testing.B) {
+func StandardPreparedUpdate(addresses []*types.Address, g grammar.Grammar, tx *sql.Tx) func(b *testing.B) {
 	fn := func(b *testing.B) {
 		var query string
 		switch g {
-		case grammar.Default:
+		case grammar.Sqlite:
 			query = `
 				update %v set
 					street = ?, city = ?, state = ?, zip = ?

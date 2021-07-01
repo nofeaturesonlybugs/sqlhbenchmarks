@@ -50,7 +50,7 @@ func ConnectSqlite() (SkipReason string, DB *sql.DB /*GB *gorm.DB,*/, err error)
 func SqliteModels() (Addresses []*types.Address, Mdb *model.Models, err error) {
 	Addresses = types.AddressRecords
 	//
-	Mdb = types.NewModels(grammar.Default)
+	Mdb = types.NewModels(grammar.Sqlite)
 	if Mdb == nil {
 		err = errors.Errorf("nil mdb")
 		return
