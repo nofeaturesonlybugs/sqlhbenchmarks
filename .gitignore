@@ -19,3 +19,4 @@ mem.prof
 profile*.pdf
 profile*.png
 profile*.txt
+perf-*.txt
