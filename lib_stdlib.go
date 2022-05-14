@@ -68,6 +68,7 @@ func StandardSelect(limit int, db *sql.DB) func(*testing.B) {
 		`
 		query = fmt.Sprintf(query, types.AddressTableName, limit)
 		for k := 0; k < b.N; k++ {
+			var all []*types.Address
 			rows, err = db.Query(query)
 			if err != nil {
 				b.Fatalf("database/sql query failed with %v", err.Error())
@@ -78,6 +79,7 @@ func StandardSelect(limit int, db *sql.DB) func(*testing.B) {
 					&d.Id, &d.CreatedTime, &d.ModifiedTime,
 					&d.Street, &d.City, &d.State, &d.Zip,
 				)
+				all = append(all, d)
 			}
 			if err != nil {
 				b.Fatalf("database/sql scan failed with %v", err.Error())
